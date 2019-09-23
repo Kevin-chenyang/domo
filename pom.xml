@@ -98,15 +98,7 @@
 							<imageTag>latest</imageTag>
 						</imageTags>
 						<forceTags>true</forceTags>
-						<dockerDirectory>${project.basedir}</dockerDirectory>
-						<env>
-							<TZ>Asia/Shanghai</TZ>
-						</env>
-						<!--时区配置-->
-						<runs>
-							<run>ln -snf /usr/share/zoneinfo/$TZ /etc/localtime</run>
-							<run>echo $TZ > /etc/timezone</run>
-						</runs>
+						<dockerDirectory>src/main/docker</dockerDirectory>
                         <resources>
                             <resource>
                                 <targetPath>/</targetPath>
