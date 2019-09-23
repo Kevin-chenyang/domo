@@ -90,23 +90,25 @@
                     <groupId>com.spotify</groupId>
                     <artifactId>docker-maven-plugin</artifactId>
                     <version>${docker.plugin.version}</version>
-                    <configuration>
-						<skipDocker>false</skipDocker>
-                        <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-						<imageTags>
-							<imageTag>${project.version}</imageTag>
-							<imageTag>latest</imageTag>
-						</imageTags>
-						<forceTags>true</forceTags>
-						<dockerDirectory>src/main/docker</dockerDirectory>
-                        <resources>
-                            <resource>
-                                <targetPath>/</targetPath>
-                                <directory>${project.build.directory}</directory>
-                                <include>${project.build.finalName}.jar</include>
-                            </resource>
-                        </resources>
-                    </configuration>
+					<executions>
+						<execution>
+							<phase>package</phase>
+							<goals>
+								<goal>build</goal>
+							</goals>
+						</execution>
+					</executions>
+					<configuration>
+						<imageName>kevindurant123/chenyang-repository</imageName>
+						<dockerDirectory>${project.basedir}/</dockerDirectory>
+						<resources>
+							<resource>
+								<targetPath>/</targetPath>
+								<directory>${project.build.directory}</directory>
+								<include>${project.build.finalName}.jar</include>
+							</resource>
+						</resources>
+					</configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
