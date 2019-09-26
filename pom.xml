@@ -22,7 +22,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<docker.plugin.version>1.0.0</docker.plugin.version>
-		<docker.image.prefix>chenyang-repository</docker.image.prefix>
+		<docker.image.prefix>kevindurant123</docker.image.prefix>
 	</properties>
 
 	<dependencies>
@@ -99,7 +99,7 @@
 						</execution>
 					</executions>
 					<configuration>
-						<imageName>kevindurant123/chenyang-repository</imageName>
+						<imageName>kevindurant123/demo-service</imageName>
 						<dockerDirectory>${project.basedir}/</dockerDirectory>
 						<resources>
 							<resource>
